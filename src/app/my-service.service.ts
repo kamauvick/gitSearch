@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {GitUser} from './git-user';
+import {SearchUserComponent} from './search-user/search-user.component';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -9,22 +10,26 @@ import {Observable} from 'rxjs';
 })
 export class MyServiceService {
   user: GitUser[] = [];
-  searchname: 'kamauvick';
-  request = 'http://https://api.github.com/users/' + this.searchname + '?access_token=' + environment.APIKEY;
+  _URL = 'https://api.github.com/users/';
+  token = '?access_token=' + environment.APIKEY;
 
   constructor(private http: HttpClient) {
   }
 
-  searchMyUser(searchname: string) {
+  searchMyUser(searchTerm: string) {
+    // tslint:disable-next-line:class-name
+    interface data {
+      login: string;
+    }
+
     return new Promise((resolve, reject) => {
-      this.http.get('https://api.github.com/users/kamauvick?access_token=3cbbddb991c02e7d5a2f0fd4224f9267a5153e5f').toPromise().then(
+      this.user = [];
+      // tslint:disable-next-line:max-line-length
+      this.http.get<data>(this._URL + searchTerm + this.token).toPromise().then(
         (results) => {
-          this.user = [];
-          // tslint:disable-next-line:prefer-for-of
-          for (let i = 0; i < results; i++) {
-          }
+          // @ts-ignore
+          this.user.push(results);
           resolve();
-          console.log(results);
         },
         (error) => {
           reject();
@@ -33,9 +38,6 @@ export class MyServiceService {
     });
   }
 }
-
-
-
 
 
 /*
