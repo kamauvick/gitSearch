@@ -1,4 +1,25 @@
-<app-search-user (searchEmmiter)="getSearchedUser($event)"></app-search-user>
-<div class="card-columns">
+<div class="jumbotron" id="particles-js">
+  <h1 class="text-center text-white">G-Search User</h1>
+  <app-search-user (searchEmmiter)="getSearchedUser($event)"></app-search-user>
+</div>
 
+<div *ngFor="let u of user">
+  <div class="card">
+    <div class="card-body">
+      <div class="container contents">
+        <div><img src='{{u.avatar_url}}' alt="avatar" class="card-img rounded-circle"></div>
+        <hr style="width: 2px; height: 300px; background-color: midnightblue; transform: rotate(20deg)">
+
+        <div class="card profile">
+          <div class="card-header"><h1 class="text-info" style="padding: 20px">  {{u.login}}</h1></div>
+          <p>Following {{u.followers}}</p>
+          <p>Following {{u.following}}</p>
+          <p>Date created {{u.created_at |date}}</p>
+          <p>User {{u.login}}</p>
+          <p>public repos {{u.public_repos}}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>

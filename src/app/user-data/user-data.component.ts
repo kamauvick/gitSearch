@@ -9,23 +9,28 @@ import {GitUser} from '../git-user';
 })
 export class UserDataComponent implements OnInit {
   user: GitUser[];
-  kaname: any;
+  particlesJS: any;
+
   constructor(private service: MyServiceService) {
   }
 
   getSearchedUser(searchTerm) {
-     this.service.searchMyUser(searchTerm).then(
+    this.service.searchMyUser(searchTerm).then(
       (success) => {
-        console.log(this.kaname);
+        this.user = this.service.user;
+        console.log(this.user);
       },
       (error) => {
-        console.log(this.kaname);
+        console.log(error);
       }
     );
   }
 
   ngOnInit() {
     this.getSearchedUser('kamauvick');
+    // tslint:disable-next-line:prefer-const
+    let particlesJS;
+    particlesJS.load('particles-js', 'particles.json', null);
   }
 
 }

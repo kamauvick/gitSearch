@@ -1,0 +1,16 @@
+.jumbotron{
+  /*background-image: url("../../assets/bg.gif");*/
+  /*background-size: cover;*/
+  /*background-repeat: no-repeat;*/
+}
+.jumbotron{
+  border-radius: 0;
+}
+.contents{
+  display: flex;
+  justify-content: center;
+}
+.card-img{
+  height: 300px;
+  width: 300px;
+}
