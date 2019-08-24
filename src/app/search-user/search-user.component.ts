@@ -14,7 +14,6 @@ export class SearchUserComponent implements OnInit {
 
   emmitUser() {
   this.searchEmmiter.emit(this.searchTerm);
-  // console.log(this.searchUser);
   }
 
   ngOnInit() {

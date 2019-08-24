@@ -1,5 +1,9 @@
 export class GitUser {
-  // tslint:disable-next-line:max-line-length variable-name
-  constructor(created_at: string, avatar_url: any, followers_url: number, following_url: number, repos_url: string, public login: number, public_repos: string, public bio: string) {
-  }
+  // tslint:disable-next-line:variable-name
+  avatar_url: any;
+  login: any;
+  bio: any;
+  name: any;
+  company: any;
+  location: any;
 }
