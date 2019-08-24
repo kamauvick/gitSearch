@@ -1,1 +1,23 @@
-<app-search-user (searchEmmiter)="getSearchedRepos($event)"></app-search-user>
+<div class="jumbotron">
+  <h1 class="text-center">G-Search Repo</h1>
+  <h5 class="text-center">{{myRepo.length}} Repositories found</h5>
+  <app-search-user (searchEmmiter)="getRepo($event)"></app-search-user>
+
+
+</div>
+<div class="container card-columns">
+  <div class="card" *ngFor="let repo of myRepo">
+    <div class="card">
+      <div class="card-header text-center"><h2>{{repo.name}}</h2></div>
+      <div class="card-body">
+        <p>{{repo.description}}</p>
+        <p>{{repo.language}}</p>
+      </div>
+      <div class="card-footer flex-footer">
+        <p>Watchers: {{repo.watchers}}</p>
+        <p>Forks: {{repo.forks}}</p>
+        <p>Default branch: {{repo.default_branch}}</p>
+      </div>
+    </div>
+  </div>
+</div>
