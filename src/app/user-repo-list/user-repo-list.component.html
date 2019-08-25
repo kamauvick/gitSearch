@@ -1,6 +1,6 @@
 <div class="jumbotron">
-  <h1 class="text-center">G-Search Repo</h1>
-  <h5 class="text-center">{{myRepo.length}} Repositories found</h5>
+  <h1 class="text-center gsearch">G-Search Repo</h1>
+  <h5 class="text-center repo-number text-white"><span id="num">{{myRepo.length}}</span> Repositories found</h5>
   <app-search-user (searchEmmiter)="getRepo($event)"></app-search-user>
 
 
@@ -8,15 +8,15 @@
 <div class="container card-columns">
   <div class="card" *ngFor="let repo of myRepo">
     <div class="card">
-      <div class="card-header text-center"><h2>{{repo.name}}</h2></div>
+      <div class="card-header text-center"><h2 id="rname">{{repo.name}}</h2></div>
       <div class="card-body">
-        <p>{{repo.description}}</p>
-        <p>{{repo.language}}</p>
+        <p id="rdesc">{{repo.description}}</p>
+        <p id="rlang">{{repo.language}}</p>
       </div>
       <div class="card-footer flex-footer">
-        <p>Watchers: {{repo.watchers}}</p>
-        <p>Forks: {{repo.forks}}</p>
-        <p>Default branch: {{repo.default_branch}}</p>
+        <p id="rwatchers" class="text-center">Watchers <span class="data">{{repo.watchers}}</span></p>
+        <p id="rforks" class="text-center">Forks <span class="data">{{repo.forks}}</span></p>
+        <p id="rbranch" class="text-center">Branch <span class="data">{{repo.default_branch}} </span></p>
       </div>
     </div>
   </div>
