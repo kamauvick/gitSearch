@@ -39,9 +39,3 @@ export class MyServiceService {
   }
 }
 
-
-/*
- searchMyUser(userName: string): Observable<GitUser[]> {
-   return this.http.get<GitUser[]>(this.request + '/users/' + userName);
- }
-*/
