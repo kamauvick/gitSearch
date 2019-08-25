@@ -5,8 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Author
 > Victor Waichigo K.
 ## Screenshots
-<img src="src/assets/shot1.png.png" width="1000">
-<img src="src/assets/shot2.png.png" width="1000">
+<img src="src/assets/shot1.png" width="1000">
+<img src="src/assets/shot2.png" width="1000">
 
 ## Installations
 * nodejs
