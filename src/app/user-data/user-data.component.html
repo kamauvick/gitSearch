@@ -1,25 +1,65 @@
-<div class="jumbotron" id="particles-js">
-  <h1 class="text-center text-white">G-Search User</h1>
+<div class="overlay">
+  <h2 class="mb-5 text-center gsearch">G - Search</h2>
   <app-search-user (searchEmmiter)="getSearchedUser($event)"></app-search-user>
-</div>
-
-<div *ngFor="let u of user">
-  <div class="card">
-    <div class="card-body">
-      <div class="container contents">
-        <div><img src='{{u.avatar_url}}' alt="avatar" class="card-img rounded-circle"></div>
-        <hr style="width: 2px; height: 300px; background-color: midnightblue; transform: rotate(20deg)">
-
-        <div class="card profile">
-          <div class="card-header"><h1 class="text-info" style="padding: 20px">  {{u.login}}</h1></div>
-          <p>Following {{u.followers}}</p>
-          <p>Following {{u.following}}</p>
-          <p>Date created {{u.created_at |date}}</p>
-          <p>User {{u.login}}</p>
-          <p>public repos {{u.public_repos}}</p>
+  <div *ngFor="let u of user">
+    <div class="main-content container">
+      <div class="container mt-7">
+        <div class="row">
+          <div class="col-xl-8 m-auto order-xl-2 mb-5 mb-xl-0">
+            <div class="card card-profile shadow">
+              <div class="row justify-content-center">
+                <div class="col-lg-3 order-lg-2">
+                  <div class="card-profile-image">
+                    <a href="#">
+                      <img src="{{u.avatar_url}}" class="rounded-circle">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                <div class="d-flex justify-content-between">
+                  <a href="#" class="btn btn-sm btn-info mr-4">Follow</a>
+                </div>
+              </div>
+              <div class="card-body pt-0 pt-md-4">
+                <div class="row">
+                  <div class="col">
+                    <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                      <div>
+                        <span class="heading">{{u.followers}}</span>
+                        <span class="description">Following</span>
+                      </div>
+                      <div>
+                        <span class="heading">{{u.following}}</span>
+                        <span class="description">Followers</span>
+                      </div>
+                      <div>
+                        <span class="heading">{{u.public_repos}}</span>
+                        <span class="description">Repos</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <h3 class="user">{{u.login}}</h3>
+                  <div class="h5 font-weight-300">
+                    <i class="ni location_pin mr-2"></i>{{u.location}}
+                  </div>
+                  <div class="h5 mt-4">
+                    <i class="ni business_briefcase-24 mr-2"></i>{{u.bio}}
+                  </div>
+                  <div>
+                    <i class="ni education_hat mr-2"></i>{{u.company}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
+    </div>
+    <div class="copyright">
+      <p class="text-center">Made with love by vick</p>
     </div>
   </div>
 </div>
