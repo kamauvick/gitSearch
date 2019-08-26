@@ -10,6 +10,8 @@ import { UserRepoListComponent } from './user-repo-list/user-repo-list.component
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DatepipePipe } from './datepipe.pipe';
+import { LogoHighlightDirective } from './logo-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavComponent,
     SearchUserComponent,
     UserRepoListComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DatepipePipe,
+    LogoHighlightDirective
   ],
   imports: [
     BrowserModule,
