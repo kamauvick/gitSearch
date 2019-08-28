@@ -40,3 +40,16 @@
   margin-bottom: 40px;
   font-family: 'Love Ya Like A Sister', cursive;
 }
+.footer-text{
+  font-family: system-ui, serif;
+  padding-top: 20px;
+  padding-bottom:-40px;
+  color: white;
+}
+#fa-love{
+  color: red;
+  opacity: 0.7;
+}
+.fa{
+  color: red;
+}

@@ -20,6 +20,10 @@ export class MyServiceService {
     // tslint:disable-next-line:class-name
     interface data {
       login: string;
+      avatar_url: string;
+      following: string;
+      followers: string;
+      public_repos: string;
     }
 
     return new Promise((resolve, reject) => {
